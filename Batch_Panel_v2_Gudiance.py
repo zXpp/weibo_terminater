@@ -126,7 +126,7 @@ if __name__ == "__main__":
 		child.wait()
 		#print ('sucess')
 		with open(os.path.join(raw,label,"Content.txt"),'wb') as c:
-			c.write("\r\n".join(eachtit))
+			c.write(u"\r\n".join(eachtit))
 		Nextflag=2 in args["_outFormat"] or 0 in args["_outFormat"] or 3 in args["_outFormat"]
 
 		if Nextflag and os.path.exists(tmp) and os.path.exists(tmp2):#710cunzai
@@ -159,11 +159,11 @@ if __name__ == "__main__":
 					if 3 in args["_outFormat"]and args["_resize"]:
 						pngs2xml(commonlist,xmlname,newtitle)
 					if 3 in args["_outFormat"]and args["_raw"]:
-						png2xml(commonlist,rawxmlname,newtitle)
+						pngs2xml(commonlist,xmlname,newtitle)
 					if 2 in args["_outFormat"] and args["_resize"]:
 						pngs2html(commonlist,htmlname,newtitle)
 					if 2 in args["_outFormat"] and args["_raw"]:
-						pngs2html(commonlist,rawhtmlname,newtitle)
+						pngs2html(commonlist,htmlname,newtitle)
 				if 0 in args["_outFormat"] and args["_resize"]:
 					png2pngs(tmp,lpngname)#Imgarr,lpng=
 					time.sleep(3)
